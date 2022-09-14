@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet">
+
+    <style>
+      *
+      {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container-fluid
+      {
+        background: #0B486B;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #F56217, #0B486B);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #F56217, #0B486B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        height: 757px;
+      }
+
+      #calculator
+      {
+        height: 600px;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 3%;
+        margin-top: 80px;
+      }
+      body
+      {
+        display: flex;
+        font-family: 'Montserrat', sans-serif;
+        background: #0B486B;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #F56217, #0B486B);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #F56217, #0B486B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+       
+      }
+
+      h1
+      {
+        text-align: center;
+        color: #0B486B;
+        font-weight: bold;
+      }
+      h3
+      {
+        text-align: center;
+        color: #0B486B;
+        font-weight: 600;
+        font-size: 22px;
+      }
+
+      form
+      {
+        text-align: center;
+        margin-top: 60px;
+        color: #eda370;
+      }
+      .Weight_div
+      {
+        margin-top: 40px;
+      }
+      input
+      {
+        margin-top: 10px;
+      }
+      .row-div
+      {
+        padding-left: 30%;
+        padding-right: 30%;
+      }
+  
+      .btn-grad 
+      {
+        background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+        margin: 10px;
+        padding: 15px 45px;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+        border: none;
+        font-family: 'Montserrat', sans-serif;
+        display: block;
+        margin: 50px auto;
+        }
+
+      .btn-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+        }
+
+        .div
+        {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+    
+    .spin
+    {
+        color: #0B486B;
+        
+    }
+
+    .ans
+    {
+        text-align: center;
+        display: none;
+    }
+
+    </style>
+
+</head>
+    
+<body>
+   <div class="container-fluid">
+    <div class="container" id="calculator">
+        <h1>BMI Calculator</h1>
+        <form action="/" method="post">
+          <div class="row row-div">
+            <div class="col-lg-12 height_div">
+                <label for="">Enter your height</label>
+            </div>
+            <div class="col-lg-12 aa">
+                <input type="text" name="n1" class="form-control" placeholder="">
+            </div>
+            <div class="col-lg-12 Weight_div">
+                <label for="">Enter your Weight</label>
+            </div>
+            <div class="col-lg-12">
+                <input type="text" name="n2" class="form-control" placeholder="">
+            </div>
+
+          </div>
+          <button class="btn-grad waiting" type="submit" name="submit">Calculate</button>
+
+        </form>
+     <div class="container ans">
+                
+            <h3>
+                Please be Patient, we will be back to you after getting your BMI shortly!
+            </h3>
+            <div class="spinner-border spin" role="status">
+                <span class="sr-only"></span>
+              </div>
+
+              <br>
+              <br>
+              <h4 name ="ali"></h4>
+        
+     </div>
+     
+    </div>
+   </div>
+   
+   <script>
+      let ans=document.querySelector('.ans');
+      let waiting = document.querySelector('.waiting');
+
+      waiting.addEventListener("click",waitingMsg)
+      function waitingMsg()
+      {
+        ans.style.display="block";
+      }
+
+   </script>
+
+</body>
+
+</html>
+
